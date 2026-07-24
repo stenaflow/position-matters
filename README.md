@@ -13,6 +13,12 @@ You can also inspect the demo notebook **without running it**. Opening `position
 
 ---
 
+The figure below illustrates the threat model. During split inference, the edge device transmits the smashed data $h$ to the cloud. An honest-but-curious attacker intercepts this intermediate representation and attempts to reconstruct the original input image, denoted by $\tilde{x}$.
+
+![Threat Model](images/threat_model.png)
+
+---
+
 ## 1 · Checkpoints
 
 The `.pth` checkpoints used by the notebook are **not included** in this repository.

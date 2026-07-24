@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 import torch
 import torch.nn as nn
@@ -17,7 +17,7 @@ from models.mae import TokenToImageDecoder
 from utils.image import get_imagenet_data
 from config import SPLIT_BLOCK, BATCH_SIZE, TRAIN_SAMPLE_PCT, VAL_SAMPLE_PCT
 
-_project_root = Path(__file__).resolve().parents[2]
+_project_root = Path(__file__).resolve().parents[3]
 _script_dir   = Path(__file__).resolve().parent
 
 N_PATCH       = 196
@@ -189,8 +189,8 @@ def main():
         # arch-tagged path for non-transformer; keep legacy s{K}.pth for transformer
         arch = args.tpp_arch
         tpp_suffix = "" if arch == "transformer" else f"_{arch}"
-        tpp_path = _project_root / f"saved_models/sara/tpp/s{K}{tpp_suffix}.pth"
-        mae_path = _project_root / f"saved_models/sara/mae/s{K}.pth"
+        tpp_path = _project_root / "saved_models" / "vit" / "sara" / "tpp" / f"s{K}{tpp_suffix}.pth"
+        mae_path = _project_root / "saved_models" / "vit" / "sara" / "mae" / f"s{K}.pth"
         for p in (tpp_path.parent, mae_path.parent):
             p.mkdir(parents=True, exist_ok=True)
 

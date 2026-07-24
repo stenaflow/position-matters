@@ -4,7 +4,7 @@ from pathlib import Path
 _here    = Path(__file__).resolve().parent
 _mae_dir = _here.parent
 sys.path.insert(0, str(_mae_dir))
-sys.path.insert(0, str(_mae_dir.parents[2]))
+sys.path.insert(0, str(_mae_dir.parents[1]))
 
 from _config import MODEL_NAME, MODELS_ROOT
 

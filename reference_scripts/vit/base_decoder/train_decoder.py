@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 import torch
 import torch.nn as nn
@@ -15,7 +15,7 @@ from models.decoder import AttackerDecoder
 from utils.image import get_imagenet_data
 from config import SPLIT_BLOCK, BATCH_SIZE, TRAIN_SAMPLE_PCT, VAL_SAMPLE_PCT
 
-_project_root = Path(__file__).resolve().parents[2]
+_project_root = Path(__file__).resolve().parents[3]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--cuda",       type=int,   default=0)
@@ -42,7 +42,7 @@ def main():
     for K in args.split:
         print(f"\n{'='*60}\n  Training decoder  split={K}\n{'='*60}")
 
-        save_dir = _project_root / "saved_models" / "decoder"
+        save_dir = _project_root / "saved_models" / "vit" / "sara" / "decoder"
         save_dir.mkdir(parents=True, exist_ok=True)
         save_path = save_dir / f"s{K}.pth"
 

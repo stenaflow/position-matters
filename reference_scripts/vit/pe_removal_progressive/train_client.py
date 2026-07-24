@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 import torch
 import torch.nn.functional as F
@@ -15,7 +15,7 @@ from models.split_vit import ClientVit, ServerVit
 from utils.image import get_imagenet_data
 from config import BATCH_SIZE, TRAIN_SAMPLE_PCT, VAL_SAMPLE_PCT
 
-_project_root = Path(__file__).resolve().parents[2]
+_project_root = Path(__file__).resolve().parents[3]
 
 N_BLOCKS = 12  # ViT-Base/16 has 12 transformer blocks
 
@@ -150,7 +150,7 @@ def _train_block(k, vit, vit_teacher, trainable, train_dl, val_dl, log_path):
 
 
 def main():
-    save_dir = _project_root / "saved_models" / "pe_removal_progressive" / "client"
+    save_dir = _project_root / "saved_models" / "vit" / "pe_removal_progressive" / "client"
     log_dir  = Path(__file__).resolve().parent / "training"
     save_dir.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)

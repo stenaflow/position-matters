@@ -2,7 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 import torch
 import torch.nn as nn
@@ -18,9 +18,9 @@ from models.decoder import AttackerDecoder
 from utils.image import get_imagenet_data
 from config import SPLIT_BLOCK, BATCH_SIZE, TRAIN_SAMPLE_PCT, VAL_SAMPLE_PCT
 
-_project_root = Path(__file__).resolve().parents[2]
-_client_root  = _project_root / "saved_models" / "adversarial" / "client"
-_sara_root    = _project_root / "saved_models" / "adversarial" / "sara"
+_project_root = Path(__file__).resolve().parents[3]
+_client_root  = _project_root / "saved_models" / "vit" / "adversarial" / "client"
+_sara_root    = _project_root / "saved_models" / "vit" / "adversarial" / "sara"
 
 N_PATCH       = 196
 REDUCTION_MIN = 0.0

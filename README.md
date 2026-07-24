@@ -24,13 +24,6 @@ The figure below illustrates the threat model. During split inference, the edge 
 The `.pth` checkpoints used by the notebook are **not included** in this repository.
 They are too large to be stored directly in the GitHub repo.
 
-If you already have the main project checkpoints in the parent repository, copy them into
-`position-matters/saved_models/` with:
-
-```bash
-bash position-matters/copy_checkpoints.sh
-```
-
 If you do **not** have the checkpoints, they must be **regenerated** from the scripts in
 `reference_scripts/`.
 

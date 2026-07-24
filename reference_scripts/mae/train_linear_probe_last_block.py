@@ -1,19 +1,9 @@
-"""
-Fine-tune the last transformer block + classification head on vit_base_patch16_224.mae.
-All other layers are frozen. This is a middle ground between linear probe and full fine-tuning.
-
-Checkpoint: saved_models/other_models/vit_base_patch16_224_mae/linear_probe_last_block.pth
-
-Run from token_reduction_privacy/:
-  python experiments/other_models/vit_base_patch16_224_mae/train_linear_probe_last_block.py --cuda 0
-"""
-
 import sys
 from pathlib import Path
 
 _here = Path(__file__).resolve().parent
 sys.path.insert(0, str(_here))
-sys.path.insert(0, str(_here.parents[2]))
+sys.path.insert(0, str(_here.parents[1]))
 
 from _config import MODEL_NAME, MODELS_ROOT, LINEAR_PROBE_LAST_BLOCK_PATH
 

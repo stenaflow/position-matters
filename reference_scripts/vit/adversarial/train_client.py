@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 import torch
 import torch.nn.functional as F
@@ -16,7 +16,7 @@ from models.position_predictor import ContextualPositionPredictor
 from utils.image import get_imagenet_data
 from config import BATCH_SIZE, VAL_SAMPLE_PCT
 
-_project_root = Path(__file__).resolve().parents[2]
+_project_root = Path(__file__).resolve().parents[3]
 _script_dir   = Path(__file__).resolve().parent
 
 N_PATCH = 196
@@ -484,8 +484,8 @@ def _converge_tpp(name, vit, tpp, K, train_dl, val_dl, log_path):
 # ─── main ────────────────────────────────────────────────────────────────────
 
 def main():
-    client_dir = _project_root / "saved_models" / "adversarial" / "client"
-    tpp_dir    = _project_root / "saved_models" / "adversarial" / "tpp"
+    client_dir = _project_root / "saved_models" / "vit" / "adversarial" / "client"
+    tpp_dir    = _project_root / "saved_models" / "vit" / "adversarial" / "tpp"
     client_dir.mkdir(parents=True, exist_ok=True)
     tpp_dir.mkdir(parents=True, exist_ok=True)
 
